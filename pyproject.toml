@@ -1,0 +1,33 @@
+[build-system]
+# Not distributed via PyPI; pyproject.toml exists only so ruff/mypy/pytest
+# pick up shared config. Install the skill by cloning the repo into
+# ~/.claude/skills/figma.
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "figma-cli-skill"
+version = "0.1.0"
+description = "Claude Code skill for reading Figma mocks and managing comments via PAT."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["tests/fixtures"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]  # line length is already capped by the formatter
+
+[tool.mypy]
+python_version = "3.11"
+strict_optional = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]
