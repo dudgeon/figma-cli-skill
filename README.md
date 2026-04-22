@@ -84,6 +84,15 @@ figma comments resolve <comment-id>
 
 See [`references/tier-3-contract.md`](references/tier-3-contract.md) for the exact shape.
 
+## Reference docs
+
+Claude loads these on demand via the `references/` paths in `SKILL.md`. Read them if you're debugging or extending the skill:
+
+- [`references/figma-api.md`](references/figma-api.md) — every REST endpoint the CLI calls, with docs links
+- [`references/tier-3-contract.md`](references/tier-3-contract.md) — exact `tree.json` shape, variable annotation format, component inlining rules, text handling
+- [`references/comments-workflow.md`](references/comments-workflow.md) — thread shape, filters, reply etiquette
+- [`references/troubleshooting.md`](references/troubleshooting.md) — 401/403/404/429, Enterprise-only endpoints, cache hygiene
+
 ## How discovery works
 
 Figma's REST API has no "list my teams" endpoint for PATs, so the skill is URL-driven. You paste a URL, and the skill:
