@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""figma CLI entry shim. See figma_pat/cli.py for the real dispatcher."""
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+
+from figma_pat.cli import main  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(main())
